@@ -17,12 +17,12 @@ class _EductionscreenState extends State<Eductionscreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xfff1f1f1),
+        backgroundColor: Colors.blueGrey.shade50,
         appBar: AppBar(
           backgroundColor: Colors.blueGrey.shade50,
           title: Text(
             'Education',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.black),
           ),
           leading: InkWell(
               onTap: () {
@@ -30,19 +30,19 @@ class _EductionscreenState extends State<Eductionscreen> {
               },
               child: Icon(
                 Icons.arrow_back_ios,
-                color: Colors.white,
+                color: Colors.black,
               )),
           actions: [
             Icon(
               Icons.settings,
-              color: Colors.white,
+              color: Colors.black,
             ),
             SizedBox(
               width: 10,
             ),
             Icon(
               Icons.edit,
-              color: Colors.white,
+              color: Colors.black,
             ),
             SizedBox(
               width: 20,
@@ -84,7 +84,7 @@ class _EductionscreenState extends State<Eductionscreen> {
                                 Text(
                                   '   Education',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 20),
+                                      color: Colors.black, fontSize: 20),
                                 ),
                                 GestureDetector(
                                   onTap: () {
@@ -94,7 +94,7 @@ class _EductionscreenState extends State<Eductionscreen> {
                                   },
                                   child: Icon(
                                     Icons.delete,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                   ),
                                 ),
                               ],
@@ -129,6 +129,7 @@ class _EductionscreenState extends State<Eductionscreen> {
         ),
         floatingActionButton: GestureDetector(
           onTap: () {
+
             setState(() {
               ControllerList.add(ControllerModel(
                   txtCourse: txtCourse,
@@ -141,7 +142,7 @@ class _EductionscreenState extends State<Eductionscreen> {
               height: 45,
               width: 100,
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.blueGrey,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -150,12 +151,12 @@ class _EductionscreenState extends State<Eductionscreen> {
                   Icon(
                     Icons.add,
                     size: 30,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                   Text(
                     'ADD',
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
@@ -180,34 +181,7 @@ class _EductionscreenState extends State<Eductionscreen> {
         ),
       ),
     );
-     SizedBox(height: 15);
-    Container(
-      height: 60,
-      width: 350,
-      child: InkWell(
-          onTap: () {
-            // Navigator.pushNamed(context, '/education');
-            introduction = {
-              'name': TextEditingController,
-            };
-          },
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, '/exp');
-            },
-            child: Center(
-                child: Text(
-              'Next',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25),
-            )),
-          )),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15), color: Colors.blueGrey),
-      // ),
-    );
+
   }
 }
 

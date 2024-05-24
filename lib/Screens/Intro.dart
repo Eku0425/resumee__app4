@@ -88,12 +88,18 @@ class _IntroScreenState extends State<IntroScreen> {
                               ),
                             ],
                           ),
+
                         )
-                      : CircleAvatar(
-                          radius: 70,
-                          backgroundImage:
-                              (imgpath != null) ? FileImage(imgpath!) : null,
-                        ),
+                      : Container(
+                    height: 250,
+                    width: 250,
+                    decoration: BoxDecoration(shape: BoxShape.circle,image: (fileImage!=null)?DecorationImage(fit: BoxFit.cover,image: FileImage(fileImage!)): null)
+                  ),
+                      // : CircleAvatar(
+                      //     radius: 70,
+                      //     backgroundImage:
+                      //         (imgpath != null) ? FileImage(imgpath!) : null,
+                      //   ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -173,7 +179,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 //   ),
                 // ),
                 // ),
-                SizedBox(height: 150),
+                SizedBox(height: 100),
                 Container(
                   height: 60,
                   width: 350,
@@ -215,10 +221,10 @@ class _IntroScreenState extends State<IntroScreen> {
   Future<void> setimg() async {
     XFile? image = await picker.pickImage(source: ImageSource.gallery);
     setState(() {
-      imgpath = File(image!.path);
+     fileImage = File(image!.path);
     });
   }
 }
 
 ImagePicker picker = ImagePicker();
-File? imgpath;
+File? fileImage;

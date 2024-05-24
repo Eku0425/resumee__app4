@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:resummeapp_3/Screens/ExperinceScreen.dart';
 import 'package:resummeapp_3/Screens/Info.dart';
 import 'package:resummeapp_3/Screens/Intro.dart';
+import 'package:resummeapp_3/Screens/LanguageScreen.dart';
 import 'package:resummeapp_3/Screens/Skills_Screen.dart';
 import 'package:resummeapp_3/Screens/contact_Screen.dart';
 import 'package:resummeapp_3/Screens/hobbies.dart';
+import 'package:resummeapp_3/Screens/pdf.dart';
 
 import 'Screens/EductionScreen.dart';
 import 'Screens/Splash_Screen.dart';
@@ -22,7 +24,10 @@ class AppRoutes
               '/edu':(context)=>Eductionscreen(),
              '/exp':(context)=>Experincescreen(),
               '/hobbies':(context)=>HobbiesScren(),
+               '/lang':(context)=>Languagescreen(),
+                '/pdf':(context)=>PdfScreen(),
   };
-  };
+
+
 
 }

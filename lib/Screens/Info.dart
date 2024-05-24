@@ -33,16 +33,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     color: Colors.black,
                     fontSize: 25,
                     fontWeight: FontWeight.bold)),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 15),
-                child: Icon(
-                  Icons.delete,
-                  color: Colors.black,
-                  size: 28,
-                ),
-              ),
-            ],
+
           ),
           body: Column(
             children: [
@@ -192,7 +183,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     padding: const EdgeInsets.only(left: 15),
                     child: InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/education');
+                        Navigator.pushNamed(context, '/edu');
                       },
                       child: Container(
                         height: 50,
@@ -321,7 +312,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     padding: const EdgeInsets.only(left: 15),
                     child: InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/languages');
+                        Navigator.pushNamed(context, '/Pdf');
                       },
                       child: Container(
                         height: 50,
@@ -349,10 +340,14 @@ class _InfoScreenState extends State<InfoScreen> {
                                   TextStyle(color: Colors.black, fontSize: 20),
                             ),
                             SizedBox(width: 150),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              size: 20,
-                              color: Colors.black,
+                            GestureDetector(onTap: () {
+                              Navigator.of(context).pushNamed('/lang');
+                            },
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 20,
+                                color: Colors.black,
+                              ),
                             )
                           ],
                         ),
