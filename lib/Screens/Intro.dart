@@ -12,8 +12,8 @@ class IntroScreen extends StatefulWidget {
 
 TextEditingController name = TextEditingController();
 String txtname = name.text;
-TextEditingController birthday = TextEditingController();
-String txtbirthday = name.text;
+TextEditingController nameLast = TextEditingController();
+String txtnamelast = name.text;
 TextEditingController personalstaement = TextEditingController();
 String txtpersonal = name.text;
 
@@ -47,7 +47,7 @@ class _IntroScreenState extends State<IntroScreen> {
                         },
                         child: Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.blue,
+                          color: Colors.black,
                         ))),
                 // Text('Back',style: TextStyle(color: Colors.blue),)
               ],
@@ -156,7 +156,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 15, left: 15),
                   child: TextField(
-                    controller: birthday,
+                    controller: nameLast,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(15))),
@@ -188,7 +188,7 @@ class _IntroScreenState extends State<IntroScreen> {
                         Navigator.pushNamed(context, '/contact');
                         introduction = {
                           'name': txtname,
-                          'birthday': txtbirthday,
+                          'Last name': txtnamelast,
                           'personalstatement': txtpersonal,
                           'phone': txtphone,
                         };

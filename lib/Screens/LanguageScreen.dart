@@ -23,19 +23,19 @@ class _LanguagescreenState extends State<Languagescreen> {
           centerTitle: true,
           leading: Row(
             children: [
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               InkWell(
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_back_ios,
                     color: Colors.black,
                   )),
             ],
           ),
           actions: [
-            SizedBox(
+            const SizedBox(
               width: 40,
             ),
             // Text(
@@ -45,15 +45,15 @@ class _LanguagescreenState extends State<Languagescreen> {
             //       fontWeight: FontWeight.bold,
             //       color: Colors.blueGrey.shade50),
             // ),
-            SizedBox(width: 100),
-            Text(
+            const SizedBox(width: 100),
+            const Text(
               "Language",
               style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
         body: SingleChildScrollView(
@@ -65,7 +65,7 @@ class _LanguagescreenState extends State<Languagescreen> {
                       (index) => ListTile(
                     title: TextField(
                       controller: l2[index],
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                       ),
                     ),
@@ -81,14 +81,14 @@ class _LanguagescreenState extends State<Languagescreen> {
                                 l2.add(txtController);
                               });
                             },
-                            icon: Icon(Icons.add)),
+                            icon: const Icon(Icons.add)),
                         GestureDetector(onTap: (){
                           setState(() {
                             l2.removeAt(index);
                           });
                         },
 
-                            child: Icon(Icons.delete)),
+                            child: const Icon(Icons.delete)),
                       ],
 
                     ),

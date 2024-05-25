@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
+import 'package:resummeapp_3/Screens/contact_Screen.dart';
 //import 'package:resume/utils/global/global.dart';
 
 //import '../data.dart';
@@ -11,8 +12,6 @@ import 'package:printing/printing.dart';
 import 'EductionScreen.dart';
 import 'Intro.dart';
 
-//import 'Skills.dart';
-//import 'object.dart';
 
 class PdfScreen extends StatefulWidget {
   const PdfScreen({super.key});
@@ -59,7 +58,7 @@ Future<Uint8List> genterepdf() async {
                           pw.Container(
                             height: 220,
                             width: 200,
-                            color: PdfColor.fromHex('28364b'),
+                            color: PdfColors.blueGrey
                           ),
                           pw.Padding(
                             padding: pw.EdgeInsets.only(left: 60, top: 50),
@@ -67,7 +66,7 @@ Future<Uint8List> genterepdf() async {
                               height: 195,
                               width: 195,
                               decoration: pw.BoxDecoration(
-                                color: PdfColor.fromHex('28364b'),
+                                color: PdfColors.blueGrey,
                                 shape: pw.BoxShape.circle,
                                 border: pw.Border.all(
                                   color: PdfColors.white,
@@ -88,38 +87,48 @@ Future<Uint8List> genterepdf() async {
                       pw.Text(
                         'About Me',
                         style: pw.TextStyle(
-                            color: PdfColor.fromHex('28364b'),
+                            color: PdfColors.black,
                             fontSize: 30,
                             fontWeight: pw.FontWeight.bold),
                       ),
-                      pw.SizedBox(
-                        height: 15,
-                      ),
+                      pw.Row(children: [
+                        pw.Container(
+                          height: 100,
+                          width: 200,
+                          color: PdfColors.white,
+                          child: pw.Text(
+                              ' your years of experience, any special skills or accomplishments, and your career goal ',
+                              style: pw.TextStyle(fontSize: 20)),
+                        ),
+                      ]),
                       pw.Container(
-                        height: 100,
-                        width: 200,
+                        height: 120,
+                        width: 120,
                         color: PdfColors.white,
                         // child: pw.Text('${txtObjective.text}',
                         //     style: pw.TextStyle(fontSize: 17)),
                       ),
-                      pw.SizedBox(
-                        height: 35,
-                      ),
                       pw.Text(
                         'Contact',
                         style: pw.TextStyle(
-                            color: PdfColor.fromHex('28364b'),
+                            color: PdfColors.black,
                             fontSize: 30,
                             fontWeight: pw.FontWeight.bold),
                       ),
-                      pw.SizedBox(height: 20),
-                      // pw.Row(children: [
-                      // pw.Padding(
-                      //   padding: pw.EdgeInsets.only(right: 120),
-                      //   child: pw.Text('${textPhone.text}',
-                      //       style: pw.TextStyle(fontSize: 20)),
-                      // ),
-                      // ]),
+                      pw.Column(children: [
+                        pw.Padding(
+                          padding: pw.EdgeInsets.only(right: 120),
+                          child: pw.Text('${txtname}',
+                              style: pw.TextStyle(
+                                  fontSize: 20, color: PdfColors.black)),
+                        ),
+                        pw.Text('${email.text}',
+                            style: pw.TextStyle(
+                                fontSize: 20, color: PdfColors.black)),
+                        pw.Text('${address.text}',
+                            style: pw.TextStyle(
+                                fontSize: 20, color: PdfColors.black)),
+                      ]),
                       pw.Padding(
                         padding: pw.EdgeInsets.only(right: 30),
                         // child: pw.Row(children: [
@@ -143,13 +152,13 @@ Future<Uint8List> genterepdf() async {
                             height: 30,
                             width: 200,
                             decoration: pw.BoxDecoration(
-                              color: PdfColor.fromHex('28364b'),
+                              color: PdfColors.blueGrey,
                             ),
                             child: pw.Center(
                               child: pw.Text(
                                 'LANGUAGE',
                                 style: pw.TextStyle(
-                                  color: PdfColors.white,
+                                  color: PdfColors.black,
                                   fontSize: 18,
                                 ),
                               ),
@@ -189,7 +198,7 @@ Future<Uint8List> genterepdf() async {
                           pw.Padding(
                             padding: pw.EdgeInsets.only(right: 120),
                             child: pw.Text(
-                              'Chinese',
+                              'Gujarati',
                               style: pw.TextStyle(
                                   color: PdfColors.black, fontSize: 18),
                             ),
@@ -207,9 +216,9 @@ Future<Uint8List> genterepdf() async {
                       pw.Padding(
                         padding: pw.EdgeInsets.only(right: 50),
                         child: pw.Text(
-                          'Aishawarya',
+                          'Trivedi',
                           style: pw.TextStyle(
-                              color: PdfColor.fromHex('28364b'),
+                              color: PdfColors.black,
                               fontSize: 30,
                               fontWeight: pw.FontWeight.bold),
                         ),
@@ -217,9 +226,9 @@ Future<Uint8List> genterepdf() async {
                       pw.Padding(
                         padding: pw.EdgeInsets.only(right: 20),
                         child: pw.Text(
-                          'Baisane',
+                          'Ekta',
                           style: pw.TextStyle(
-                              color: PdfColor.fromHex('28364b'),
+                              color: PdfColors.black,
                               fontSize: 30,
                               fontWeight: pw.FontWeight.bold),
                         ),
@@ -227,9 +236,9 @@ Future<Uint8List> genterepdf() async {
                       pw.Padding(
                         padding: pw.EdgeInsets.only(left: 50, top: 10),
                         child: pw.Text(
-                          'Flutter Devloper',
+                          'Flutter Developer',
                           style: pw.TextStyle(
-                            color: PdfColor.fromHex('28364b'),
+                            color: PdfColors.black,
                             fontSize: 18,
                           ),
                         ),
@@ -241,13 +250,13 @@ Future<Uint8List> genterepdf() async {
                             height: 30,
                             width: 260,
                             decoration: pw.BoxDecoration(
-                              color: PdfColor.fromHex('28364b'),
+                              color: PdfColors.blueGrey,
                             ),
                             child: pw.Center(
                               child: pw.Text(
                                 'EXPERIENCE',
                                 style: pw.TextStyle(
-                                  color: PdfColors.white,
+                                  color: PdfColors.black,
                                   fontSize: 18,
                                 ),
                               ),
@@ -329,13 +338,13 @@ Future<Uint8List> genterepdf() async {
                             height: 30,
                             width: 260,
                             decoration: pw.BoxDecoration(
-                              color: PdfColor.fromHex('28364b'),
+                              color: PdfColors.blueGrey,
                             ),
                             child: pw.Center(
                               child: pw.Text(
                                 'EDUCATION',
                                 style: pw.TextStyle(
-                                  color: PdfColors.white,
+                                  color: PdfColors.black,
                                   fontSize: 18,
                                 ),
                               ),
@@ -363,12 +372,11 @@ Future<Uint8List> genterepdf() async {
                                   '${ControllerList[index].txtCourse!.text}',
                                   style: pw.TextStyle(
                                       color: PdfColors.black, fontSize: 17)),
-                              pw.Text(
-                                  '${ControllerList[index].txtGrade!.text}%',
+                              pw.Text('${ControllerList[index].txtGrade!.text}',
                                   style: pw.TextStyle(
                                       color: PdfColors.black, fontSize: 17)),
                               pw.Text(
-                                '${ControllerList[index].txtYear!.text} - 2024',
+                                '${ControllerList[index].txtYear!.text}',
                                 style: pw.TextStyle(
                                     color: PdfColors.black, fontSize: 17),
                               ),
@@ -383,14 +391,13 @@ Future<Uint8List> genterepdf() async {
                           pw.Container(
                             height: 30,
                             width: 260,
-                            decoration: pw.BoxDecoration(
-                              color: PdfColor.fromHex('28364b'),
-                            ),
+                            decoration:
+                                pw.BoxDecoration(color: PdfColors.blueGrey),
                             child: pw.Center(
                               child: pw.Text(
                                 'SKILLS SUMMARY',
                                 style: pw.TextStyle(
-                                  color: PdfColors.white,
+                                  color: PdfColors.black,
                                   fontSize: 18,
                                 ),
                               ),
@@ -402,7 +409,36 @@ Future<Uint8List> genterepdf() async {
                       pw.Padding(
                         padding: pw.EdgeInsets.only(right: 150),
                         child: pw.Text(
-                          'Java,Flutter',
+                          'C,C++,Flutter',
+                          style: pw.TextStyle(fontSize: 20),
+                        ),
+                      ),
+                      pw.SizedBox(height: 10),
+                      pw.SizedBox(height: 0),
+                      pw.Row(
+                        children: [
+                          pw.Container(
+                            height: 30,
+                            width: 260,
+                            decoration:
+                            pw.BoxDecoration(color: PdfColors.blueGrey),
+                            child: pw.Center(
+                              child: pw.Text(
+                                'Hobbies',
+                                style: pw.TextStyle(
+                                  color: PdfColors.black,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      pw.SizedBox(height: 15),
+                      pw.Padding(
+                        padding: pw.EdgeInsets.only(right: 150),
+                        child: pw.Text(
+                          'Reading',
                           style: pw.TextStyle(fontSize: 20),
                         ),
                       ),

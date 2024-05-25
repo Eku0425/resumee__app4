@@ -312,7 +312,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     padding: const EdgeInsets.only(left: 15),
                     child: InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/Pdf');
+                        Navigator.pushNamed(context, '/lang');
                       },
                       child: Container(
                         height: 50,
